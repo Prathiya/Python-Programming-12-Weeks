@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="en" xml:lang="en">
+<head>
+    <title>Iteration Control Structures-Coding: Attempt review | REC-CIS</title>
+    <link rel="shortcut icon" href="http://14.99.10.247/moodle/theme/image.php/classic/theme/1791390003/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, Iteration Control Structures-Coding: Attempt review | REC-CIS" />
+<link rel="stylesheet" type="text/css" href="http://14.99.10.247/moodle/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="http://14.99.10.247/moodle/theme/styles.php/classic/1791390003_1/all" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"http:\/\/14.99.10.247\/moodle","homeurl":{},"sesskey":"ZQkQEzMYZ5","sessiontimeout":"28800","sessiontimeoutwarning":"1200","themerev":"1791390003","slasharguments":1,"theme":"classic","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1791390003","admin":"admin","svgicons":true,"usertimezone":"Asia\/Kolkata","language":"en","courseId":16,"courseContextId":25257,"contextid":25297,"contextInstanceId":1372,"langrev":1791390003,"templaterev":"1791390003","siteId":1};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"http:\/\/14.99.10.247\/moodle\/lib\/yuilib\/3.18.1\/","comboBase":"http:\/\/14.99.10.247\/moodle\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"http:\/\/14.99.10.247\/moodle\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"http:\/\/14.99.10.247\/moodle\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"http:\/\/14.99.10.247\/moodle\/theme\/yui_combo.php?m\/1791390003\/","combine":true,"comboBase":"http:\/\/14.99.10.247\/moodle\/theme\/yui_combo.php?","ext":false,"root":"m\/1791390003\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"http:\/\/14.99.10.247\/moodle\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"http:\/\/14.99.10.247\/moodle\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1791390003\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"http:\/\/14.99.10.247\/moodle\/lib\/javascript.php\/1791390003\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"http:\/\/14.99.10.247\/moodle\/lib\/javascript.php\/1791390003\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"core_question_flags":{"name":"core_question_flags","fullpath":"http:\/\/14.99.10.247\/moodle\/lib\/javascript.php\/1791390003\/question\/flags.js","requires":["base","dom","event-delegate","io-base"]},"core_question_engine":{"name":"core_question_engine","fullpath":"http:\/\/14.99.10.247\/moodle\/lib\/javascript.php\/1791390003\/question\/qengine.js","requires":["node","event"]},"mod_quiz":{"name":"mod_quiz","fullpath":"http:\/\/14.99.10.247\/moodle\/lib\/javascript.php\/1791390003\/mod\/quiz\/module.js","requires":["base","dom","event-delegate","event-key","core_question_engine"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body  id="page-mod-quiz-review" class="format-topics  path-mod path-mod-quiz chrome dir-ltr lang-en yui-skin-sam yui3-skin-sam 14-99-10-247--moodle pagelayout-secure course-16 context-25297 cmid-1372 cm-type-quiz category-1 theme ">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Skip to main content</a>
+</div><script src="http://14.99.10.247/moodle/lib/javascript.php/1791390003/lib/polyfills/polyfill.js"></script>
+<script src="http://14.99.10.247/moodle/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.js"></script><script src="http://14.99.10.247/moodle/lib/javascript.php/1791390003/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="fixed-top navbar navbar-bootswatch navbar-expand moodle-has-zindex">
+        <div class="container-fluid">
+            <span class="site-name d-none d-md-inline">REC-CIS</span>
+    
+        </div>
+    </nav>
+
+    <div id="page" class="container-fluid">
+
+        <div id="page-header" class="row">
+            <div class="col-12 py-3">
+                <div class="page-context-header">
+                    <div class="page-header-headings">
+                        <h1>CS23336/GE23231/GE23233-IPP/PUP/PSPP</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-content" class="row  blocks-pre  ">
+            <div id="region-main-box" class="region-main">
+                <section id="region-main" aria-label="Content">
+                    <div class="card">
+                        <div class="card-body">
+                            <span class="notifications" id="user-notifications"></span>
+                            <div role="main"><div class="mb-3"><table class="generaltable generalbox quizreviewsummary mb-0">
+    <tbody>
+        <tr>
+            <th class="cell" scope="row">Status</th>
+            <td class="cell">Finished</td>
+        </tr>
+        <tr>
+            <th class="cell" scope="row">Started</th>
+            <td class="cell">Saturday, 22 August 2026, 9:24 AM</td>
+        </tr>
+        <tr>
+            <th class="cell" scope="row">Completed</th>
+            <td class="cell">Saturday, 22 August 2026, 9:34 AM</td>
+        </tr>
+        <tr>
+            <th class="cell" scope="row">Duration</th>
+            <td class="cell">9 mins 37 secs</td>
+        </tr>
+        <tr>
+            <th class="cell" scope="row">Grade</th>
+            <td class="cell"><b>10.00</b> out of 10.00 (<b>100</b>%)</td>
+        </tr>
+    </tbody>
+</table></div><form action="http://14.99.10.247/moodle/mod/quiz/review.php?attempt=244606&amp;cmid=1372" method="post" class="questionflagsaveform"><div><div id="question-245846-1" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">1</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:1_:flagged" value="0" /><input type="hidden" value="qaid=1406573&amp;qubaid=245846&amp;qid=48254&amp;slot=1&amp;checksum=f091f6f4677089fc16b494307ef13a41&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:1_:flaggedcheckbox" name="q245846:1_:flagged" value="1" /><label id="q245846:1_:flaggedlabel" for="q245846:1_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:1_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:1_:sequencecheck" value="3" /><p dir="ltr" style="text-align: left;"></p><div>You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction.<br>•The first kangaroo starts at position&nbsp;&nbsp;x1 and moves at a speed&nbsp; v1 &nbsp;meters per jump.<br>•The second kangaroo starts at position x2 &nbsp;&nbsp;and moves at a speed of&nbsp; v2&nbsp;meters per jump&nbsp; and x2 &gt; &nbsp;x1<br>•You have to figure out to get both kangaroos at the same position at the same time as part of the show before k jumps. If it is possible, return&nbsp;YES, otherwise return&nbsp;NO.<br></div><div><br></div><div><strong>Input Format:</strong></div><div>x1-position of kangaroo1</div><div>v1-Speed of kangaroo1</div><div><div>x2-position of kangaroo2</div><div>v2-Speed of kangaroo2</div><div>k-jumps</div><div><br></div><div><strong>Output Format:</strong><br></div><div>Both kangaroos are at the same position within k jumps, YES, otherwise NO.<br></div><div><br></div><div><br></div><div><br></div><div><strong><br></strong></div><br></div><div><br></div><br><br><p></p><p class="for-example-para">For example:</p><div class="coderunner-examples"><div class="table-responsive"><table class="coderunnerexamples">
+<thead>
+<tr>
+<th class="header c0" style="" scope="col">Input</th>
+<th class="header c1 lastcol" style="" scope="col">Result</th>
+</tr>
+</thead>
+<tbody><tr class="r0 lastrow">
+<td class="cell c0" style=""><pre class="tablecell">0
+3
+4
+2
+6</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">YES</pre></td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="prompt"><label class="answerprompt" for="id_q245846:1_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:1_answer" id="id_q245846:1_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+x1 = int(input())
+v1 = int(input())
+x2 = int(input())
+v2 = int(input())
+k = int(input())
+
+found = False
+
+for jumps in range(1, k + 1):
+    if x1 + v1 * jumps == x2 + v2 * jumps:
+        found = True
+        break
+
+if found:
+    print(&quot;YES&quot;)
+else:
+    print(&quot;NO&quot;)
+    </textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">0
+3
+4
+2
+6</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">YES</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">YES</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">0
+3
+2
+4
+8</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">NO</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">NO</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-2" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">2</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:2_:flagged" value="0" /><input type="hidden" value="qaid=1406574&amp;qubaid=245846&amp;qid=48258&amp;slot=2&amp;checksum=0f7492d022d096156ccdb1c7643ed397&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:2_:flaggedcheckbox" name="q245846:2_:flagged" value="1" /><label id="q245846:2_:flaggedlabel" for="q245846:2_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:2_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:2_:sequencecheck" value="3" /><p dir="ltr">Let’s print a chessboard!</p><p dir="ltr">Write a program that takes input:</p><p dir="ltr"><span style="font-size: 0.9375rem;">Integer N(represents the rows and columns of a chessboard) and also the starting character of the chessboard</span><br></p><p dir="ltr">Output Format</p><p dir="ltr">Print the chessboard as per the given examples</p><p dir="ltr">Sample Input / Output</p><p dir="ltr">Input:</p><p dir="ltr">2&nbsp;</p><p dir="ltr">W</p><p dir="ltr"><span style="font-size: 0.9375rem;">Output:</span><br></p><p dir="ltr">WB</p><p dir="ltr">BW</p><p dir="ltr"><br></p><div class="prompt"><label class="answerprompt" for="id_q245846:2_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:2_answer" id="id_q245846:2_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+n = int(input())
+start = input().strip()
+
+other = &quot;B&quot; if start == &quot;W&quot; else &quot;W&quot;
+
+for i in range(n):
+    for j in range(n):
+        if (i + j) % 2 == 0:
+            print(start, end=&quot;&quot;)
+        else:
+            print(other, end=&quot;&quot;)
+    print()</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">2
+W</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">WB
+BW</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">WB
+BW</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">3
+B</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">BWB
+WBW
+BWB</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">BWB
+WBW
+BWB</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-3" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">3</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:3_:flagged" value="0" /><input type="hidden" value="qaid=1406575&amp;qubaid=245846&amp;qid=48257&amp;slot=3&amp;checksum=04d5c9dd308df0bfa72bd70af9e2c153&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:3_:flaggedcheckbox" name="q245846:3_:flagged" value="1" /><label id="q245846:3_:flaggedlabel" for="q245846:3_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:3_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:3_:sequencecheck" value="3" /><p dir="ltr" style="text-align: left;">Write python program to print the following pattern based on input size.&nbsp;</p><p dir="ltr" style="text-align: left;">Input:</p><p dir="ltr" style="text-align: left;">3</p><p dir="ltr" style="text-align: left;">Output:</p><pre style="text-align: left;">    1
+   2 3
+  4 5 6<br></pre><pre style="text-align: left;"><pre><br></pre><br></pre><p class="for-example-para">For example:</p><div class="coderunner-examples"><div class="table-responsive"><table class="coderunnerexamples">
+<thead>
+<tr>
+<th class="header c0" style="" scope="col">Input</th>
+<th class="header c1 lastcol" style="" scope="col">Result</th>
+</tr>
+</thead>
+<tbody><tr class="r0 lastrow">
+<td class="cell c0" style=""><pre class="tablecell">4</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">   1
+  2 3
+ 4 5 6
+7 8 9 10</pre></td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="prompt"><label class="answerprompt" for="id_q245846:3_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:3_answer" id="id_q245846:3_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+n = int(input())
+
+num = 1
+
+for i in range(1, n + 1):
+    print(&quot; &quot; * (n - i), end=&quot;&quot;)
+    
+    for j in range(i):
+        print(num, end=&quot; &quot;)
+        num += 1
+    
+    print()</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">3</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">  1
+ 2 3
+4 5 6</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">  1
+ 2 3
+4 5 6</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">4</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">   1
+  2 3
+ 4 5 6
+7 8 9 10</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">   1
+  2 3
+ 4 5 6
+7 8 9 10</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-4" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">4</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:4_:flagged" value="0" /><input type="hidden" value="qaid=1406576&amp;qubaid=245846&amp;qid=48252&amp;slot=4&amp;checksum=4cbcd5b2b6cf998367db19fc20fcbed2&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:4_:flaggedcheckbox" name="q245846:4_:flagged" value="1" /><label id="q245846:4_:flaggedlabel" for="q245846:4_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:4_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:4_:sequencecheck" value="3" /><p dir="ltr"></p><p dir="ltr">A Number is said to be Disarium number when the sum of its digit raised to the power of their respective positions becomes equal to the number itself. Write a program to print number is Disarium or not.</p><p dir="ltr">Input Format:<br></p><p dir="ltr">Single Integer Input from stdin.</p><p dir="ltr">Output Format:<br></p><p dir="ltr">Yes or No.</p><p dir="ltr">Example Input:<br></p><p dir="ltr">175</p><p dir="ltr">Output:<br></p><p dir="ltr">Yes</p><p dir="ltr">Explanation<br></p><p dir="ltr">1^1 + 7^2 +5^3 = 175<br></p><p dir="ltr">Example Input:<br></p><p dir="ltr">123</p><p dir="ltr">Output:<br></p><p dir="ltr">No</p><p dir="ltr"></p><p class="for-example-para">For example:</p><div class="coderunner-examples"><div class="table-responsive"><table class="coderunnerexamples">
+<thead>
+<tr>
+<th class="header c0" style="" scope="col">Input</th>
+<th class="header c1 lastcol" style="" scope="col">Result</th>
+</tr>
+</thead>
+<tbody><tr class="r0">
+<td class="cell c0" style=""><pre class="tablecell">175</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">Yes</pre></td>
+</tr>
+<tr class="r1 lastrow">
+<td class="cell c0" style=""><pre class="tablecell">123</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">No</pre></td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="prompt"><label class="answerprompt" for="id_q245846:4_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:4_answer" id="id_q245846:4_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+n = int(input())
+digits = str(n)
+
+total = 0
+
+for i, digit in enumerate(digits, start=1):
+    total += int(digit) ** i
+
+if total == n:
+    print(&quot;Yes&quot;)
+else:
+    print(&quot;No&quot;)</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">175</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">Yes</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">Yes</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">123</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">No</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">No</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">89</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">Yes</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">Yes</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">90</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">No</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">No</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r1 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">518</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">Yes</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">Yes</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-5" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">5</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:5_:flagged" value="0" /><input type="hidden" value="qaid=1406577&amp;qubaid=245846&amp;qid=48259&amp;slot=5&amp;checksum=0ceb3b868a2958b75db0c760a65a9af0&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:5_:flaggedcheckbox" name="q245846:5_:flagged" value="1" /><label id="q245846:5_:flaggedlabel" for="q245846:5_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:5_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:5_:sequencecheck" value="3" /><p dir="ltr" style="text-align: left;"><p><span lang="EN-IN">Write a program to find the count of non-repeated
+digits in a given number N. The number will be passed to the program as an
+input of type int. </span></p>
+
+<p><span style="font-size: 0.9375rem;">Assumption: The input number will be a positive
+integer number &gt;= 1 and &lt;= 25000.</span><br></p>
+
+<p><span style="font-size: 0.9375rem;">Some examples are as below.</span><br></p>
+
+<p><span style="font-size: 0.9375rem;">If the given number is 292, the program should
+return 1 because there is only 1 non-­repeated digit '9' in this number</span><br></p>
+
+<p><span style="font-size: 0.9375rem;">If the given number is 1015, the program should
+return 2 because there are 2 non-repeated digits in this number, '0', and '5'.</span><br></p>
+
+<p><span style="font-size: 0.9375rem;">If the given number is 108, the program should
+return 3 because there are 3 non-­repeated digits in this number, '1', '0', and
+'8'.</span></p>
+
+<p><span style="font-size: 0.9375rem;">If the given number is 22, the function should
+return 0 because there are NO non-­repeated digits in this number.</span><br></p><br></p><p class="for-example-para">For example:</p><div class="coderunner-examples"><div class="table-responsive"><table class="coderunnerexamples">
+<thead>
+<tr>
+<th class="header c0" style="" scope="col">Input</th>
+<th class="header c1 lastcol" style="" scope="col">Result</th>
+</tr>
+</thead>
+<tbody><tr class="r0">
+<td class="cell c0" style=""><pre class="tablecell">292</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">1</pre></td>
+</tr>
+<tr class="r1">
+<td class="cell c0" style=""><pre class="tablecell">1015</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">2</pre></td>
+</tr>
+<tr class="r0">
+<td class="cell c0" style=""><pre class="tablecell">108</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">3</pre></td>
+</tr>
+<tr class="r1 lastrow">
+<td class="cell c0" style=""><pre class="tablecell">22</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">0</pre></td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="prompt"><label class="answerprompt" for="id_q245846:5_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:5_answer" id="id_q245846:5_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+n = input()
+
+count = 0
+
+for digit in n:
+    if n.count(digit) == 1:
+        count += 1
+
+print(count)</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">292</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">1</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">1</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">1015</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">2</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">2</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">108</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">3</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">3</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">22</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">0</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">0</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-6" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">6</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:6_:flagged" value="0" /><input type="hidden" value="qaid=1406578&amp;qubaid=245846&amp;qid=48253&amp;slot=6&amp;checksum=fc31567c9689e4c0d422fdaae064a0f6&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:6_:flaggedcheckbox" name="q245846:6_:flagged" value="1" /><label id="q245846:6_:flaggedlabel" for="q245846:6_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:6_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:6_:sequencecheck" value="4" /><p><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-IN</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+
+<![endif]-->
+
+</p><p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Write a program that given an integer ‘n’,
+prints the number of integers that are less than or equal to ‘n’ and co-prime
+to ‘n’</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Two integers a and b are said to be relatively
+prime or co-prime if the only positive integer that evenly divides both of them
+is 1. That is, the only common positive factor of the two numbers is 1. This is
+equivalent to their greatest common divisor being 1.</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Input Format:</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">One line containing the value of 'n', where
+1&lt;=n&lt;=10,000</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Output Format:</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">One line containing the number of integers that
+are co-prime to n and less than or equal to 'n'</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Sample Test Cases</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Test Case 1</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Input</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">10</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Output</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">4</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Test Case 2</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Input</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">23</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Output</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">22</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Test Case 3</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Input</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">11</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">Output</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">10</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:
+justify;line-height:normal"><span style="font-size:12.0pt;
+mso-bidi-font-family:Calibri" lang="EN-IN">&nbsp;</span></p><div class="prompt"><label class="answerprompt" for="id_q245846:6_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:6_answer" id="id_q245846:6_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+import math
+n = int(input())
+count = 0
+for i in range(1, n + 1):
+    if math.gcd(i, n) == 1:
+        count+=1
+print(count)</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">10</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">4</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">4</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">23</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">22</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">22</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r1 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">11</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">10</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">10</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-7" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">7</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:7_:flagged" value="0" /><input type="hidden" value="qaid=1406579&amp;qubaid=245846&amp;qid=48261&amp;slot=7&amp;checksum=17dd463128cc048ce09d80d45a451fdb&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:7_:flaggedcheckbox" name="q245846:7_:flagged" value="1" /><label id="q245846:7_:flaggedlabel" for="q245846:7_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:7_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:7_:sequencecheck" value="5" /><p dir="ltr">An automorphic number is a number whose square ends with the number itself.</p><p dir="ltr">For example, 5 is an automorphic number because 5*5 =25. The last digit is 5 which same as</p><p dir="ltr">the given number.</p><p dir="ltr"><span style="font-size: 0.9375rem;">If it is an automorphic number display “Automorphic” else display “Not Automorphic”.</span><br></p><p dir="ltr">Input Format:</p><p dir="ltr">Take a Integer from Keyboard</p><p dir="ltr">Output Format:</p><p dir="ltr">Print Automorphic if given number is Automorphic number, otherwise Not Automorphic</p><p dir="ltr">Example input:</p><p dir="ltr">5</p><p dir="ltr">Output:</p><p dir="ltr">Automorphic</p><p dir="ltr">Example input:</p><p dir="ltr">25</p><p dir="ltr">Output:</p><p dir="ltr">Automorphic</p><p dir="ltr">Example input:</p><p dir="ltr">7</p><p dir="ltr">Output:</p><p dir="ltr">Not Automorphic</p><div class="prompt"><label class="answerprompt" for="id_q245846:7_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:7_answer" id="id_q245846:7_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+n=int(input())
+
+square = n * n
+
+if str(square).endswith(str(n)):
+    print(&quot;Automorphic&quot;)
+else:
+    print(&quot;Not Automorphic&quot;)</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">5</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">Automorphic</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">Automorphic</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">625</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">Automorphic</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">Automorphic</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r1 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">7</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">Not Automorphic</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">Not Automorphic</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-8" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">8</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:8_:flagged" value="0" /><input type="hidden" value="qaid=1406580&amp;qubaid=245846&amp;qid=48255&amp;slot=8&amp;checksum=b9b230a876aa9bff446aedf6d57c0443&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:8_:flaggedcheckbox" name="q245846:8_:flagged" value="1" /><label id="q245846:8_:flaggedlabel" for="q245846:8_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:8_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:8_:sequencecheck" value="3" /><p dir="ltr" style="text-align: left;"></p><p><span lang="EN-IN"></span></p><p>Given a positive integer&nbsp;a, find the smallest positive integer&nbsp;b&nbsp;whose multiplication of each digit equals to&nbsp;a.</p><p>&nbsp;</p><p>If there is no answer or the answer is not fit in 32-bit signed integer, then return 0.</p><p>&nbsp;</p><p><b>Example 1</b></p><p><br>Input:</p><p>&nbsp;</p><p>48</p><p>&nbsp;</p><p>Output:</p><p>&nbsp;</p><p>68</p><p><b>&nbsp;</b></p><p><b>Example 2</b></p><p><br>Input:</p><p>&nbsp;</p><p>15</p><p>&nbsp;</p><p>Output:</p><p>&nbsp;</p><p>35</p><br><br><p></p><p class="for-example-para">For example:</p><div class="coderunner-examples"><div class="table-responsive"><table class="coderunnerexamples">
+<thead>
+<tr>
+<th class="header c0" style="" scope="col">Input</th>
+<th class="header c1 lastcol" style="" scope="col">Result</th>
+</tr>
+</thead>
+<tbody><tr class="r0">
+<td class="cell c0" style=""><pre class="tablecell">48</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">68</pre></td>
+</tr>
+<tr class="r1 lastrow">
+<td class="cell c0" style=""><pre class="tablecell">15</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">35</pre></td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="prompt"><label class="answerprompt" for="id_q245846:8_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:8_answer" id="id_q245846:8_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+n = int(input())
+
+if n &lt; 10:
+    print(n)
+else:
+    factors = []
+
+    for i in range(9, 1, -1):
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+
+    if n != 1:
+        print(0)
+    else:
+        result = int(&quot;&quot;.join(map(str, sorted(factors))))
+
+        if result &lt;= 2147483647:
+            print(result)
+        else:
+            print(0)</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">48</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">68</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">68</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">15</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">35</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">35</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-9" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">9</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:9_:flagged" value="0" /><input type="hidden" value="qaid=1406581&amp;qubaid=245846&amp;qid=48256&amp;slot=9&amp;checksum=71390b8851750aa837d886ddce45734a&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:9_:flaggedcheckbox" name="q245846:9_:flagged" value="1" /><label id="q245846:9_:flaggedlabel" for="q245846:9_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:9_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:9_:sequencecheck" value="3" /><p dir="ltr"></p><p><span lang="EN-IN">Given a number N, find the next perfect square greater than N.</span></p><p><span lang="EN-IN">Input Format:</span></p><p><span lang="EN-IN">Integer input from stdin.</span></p><p><span lang="EN-IN">Output Format:</span></p><p><span lang="EN-IN">Perfect square greater than N.</span></p><p><span lang="EN-IN">Example Input:</span></p><p><span lang="EN-IN">10</span></p><p><span lang="EN-IN">Output:</span></p><p><span lang="EN-IN">16</span></p><br><p dir="ltr"><span style="font-size: 0.9375rem;"></span><br></p><p class="for-example-para">For example:</p><div class="coderunner-examples"><div class="table-responsive"><table class="coderunnerexamples">
+<thead>
+<tr>
+<th class="header c0" style="" scope="col">Input</th>
+<th class="header c1 lastcol" style="" scope="col">Result</th>
+</tr>
+</thead>
+<tbody><tr class="r0">
+<td class="cell c0" style=""><pre class="tablecell">10</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">16</pre></td>
+</tr>
+<tr class="r1 lastrow">
+<td class="cell c0" style=""><pre class="tablecell">20</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">25</pre></td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="prompt"><label class="answerprompt" for="id_q245846:9_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:9_answer" id="id_q245846:9_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+import math
+
+n = int(input())
+
+root = math.isqrt(n)
+print((root + 1) ** 2)</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">10</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">16</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">16</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">20</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">25</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">25</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><div id="question-245846-10" class="que coderunner adaptive_adapted_for_coderunner correct"><div class="info"><h3 class="no">Question <span class="qno">10</span></h3><div class="state">Correct</div><div class="grade">Mark 1.00 out of 1.00</div><div class="questionflag editable"><input type="hidden" name="q245846:10_:flagged" value="0" /><input type="hidden" value="qaid=1406582&amp;qubaid=245846&amp;qid=48260&amp;slot=10&amp;checksum=1a6d53dd186470b5fe4d3e91e0052dfe&amp;sesskey=ZQkQEzMYZ5&amp;newstate=" class="questionflagpostdata" /><input type="checkbox" id="q245846:10_:flaggedcheckbox" name="q245846:10_:flagged" value="1" /><label id="q245846:10_:flaggedlabel" for="q245846:10_:flaggedcheckbox"><img src="http://14.99.10.247/moodle/theme/image.php/classic/core/1791390003/i/unflagged" alt="" class="questionflagimage" id="q245846:10_:flaggedimg" /><span>Flag question</span></label>
+</div></div><div class="content"><div class="formulation clearfix"><h4 class="accesshide">Question text</h4><input type="hidden" name="q245846:10_:sequencecheck" value="4" /><p dir="ltr" style="text-align: left;"><p><span lang="EN-IN">Write a program to find the count of the number
+of prime numbers in a specified range.</span></p>
+
+<p><span style="font-size: 0.9375rem;">The starting and ending number of the range will
+be provided as input to the program.</span><br></p>
+
+<p><span style="font-size: 0.9375rem;">Assumption: 2 &lt;=starting number of the
+range&lt;= ending number of the range&lt;=7919</span><br></p>
+
+<p><span style="font-size: 0.9375rem;">Example1: If the starting and ending number or the
+range is given as 2 and 20, the program must return 8, because there are 8 prime
+numbers in the specified range from 2 to 20. namely (2. 3. 5, 7, 11, 13, 17,
+19)</span><br></p>
+
+<p><span style="font-size: 0.9375rem;">Example2: If the starting and ending number of the
+range is given as 700 and 725, the program must return 3, because there are 3
+prime numbers in the specified range from 700 to 725, namely (701, 709, 719)</span><br></p><br></p><p class="for-example-para">For example:</p><div class="coderunner-examples"><div class="table-responsive"><table class="coderunnerexamples">
+<thead>
+<tr>
+<th class="header c0" style="" scope="col">Input</th>
+<th class="header c1 lastcol" style="" scope="col">Result</th>
+</tr>
+</thead>
+<tbody><tr class="r0">
+<td class="cell c0" style=""><pre class="tablecell">2
+20</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">8</pre></td>
+</tr>
+<tr class="r1 lastrow">
+<td class="cell c0" style=""><pre class="tablecell">700
+725</pre></td>
+<td class="cell c1 lastcol" style=""><pre class="tablecell">3</pre></td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="prompt"><label class="answerprompt" for="id_q245846:10_answer">Answer:</label><span class="penaltyregime">(penalty regime: 0 %)</span></div><textarea class="coderunner-answer edit_code" name="q245846:10_answer" id="id_q245846:10_answer" spellcheck="false" rows="18" data-params="{}" data-globalextra="" data-lang="Python3" data-test0="" readonly="">
+start = int(input())
+end = int(input())
+
+count = 0
+
+for num in range(start, end + 1):
+    if num &lt; 2:
+        continue
+
+    prime = True
+
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            prime = False
+            break
+
+    if prime:
+        count += 1
+
+print(count)</textarea><div class="im-controls"><div class="d-flex"></div></div></div><div class="outcome clearfix"><h4 class="accesshide">Feedback</h4><div class="feedback"><div class="specificfeedback"><div class="coderunner-test-results good"><div class="table-responsive"><table class="coderunner-test-results">
+<thead>
+<tr>
+<td class="header c0" style=""></td>
+<th class="header c1" style="" scope="col">Input</th>
+<th class="header c2" style="" scope="col">Expected</th>
+<th class="header c3" style="" scope="col">Got</th>
+<td class="header c4 lastcol" style=""></td>
+</tr>
+</thead>
+<tbody><tr class="r1">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">2
+20</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">8</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">8</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+<tr class="r0 lastrow">
+<td class="cell c0" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+<td class="cell c1" style=""><pre class="tablecell">700
+725</pre></td>
+<td class="cell c2" style=""><pre class="tablecell">3</pre></td>
+<td class="cell c3" style=""><pre class="tablecell">3</pre></td>
+<td class="cell c4 lastcol" style=""><i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></td>
+</tr>
+</tbody>
+</table>
+</div><p>Passed all tests! &nbsp;<i class="icon fa fa-check text-success fa-fw "  title="Correct" role="img" aria-label="Correct"></i></p></div></div></div><div class="im-feedback"><div class="correctness badge correct">Correct</div><div class="gradingdetails">Marks for this submission: 1.00/1.00.</div></div></div></div></div><input type="hidden" name="sesskey" value="ZQkQEzMYZ5" /><div class="submitbtns"><input type="submit" class="questionflagsavebutton btn btn-secondary" name="savingflags" value="Save the state of the flags" /></div></div></form><div class="submitbtns"><a class="mod_quiz-next-nav" href="http://14.99.10.247/moodle/mod/quiz/view.php?id=1372">Finish review</a></div></div>
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="columnleft  has-blocks ">
+                <section data-region="blocks-column" class="d-print-none" aria-label="Blocks">
+                    <aside id="block-region-side-pre" class="block-region" data-blockregion="side-pre" data-droptarget="1"><h2 class="sr-only">Blocks</h2><a href="#sb-1" class="sr-only sr-only-focusable">Skip Quiz navigation</a>
+
+<section id="mod_quiz_navblock"
+     class=" block block_fake  card mb-3"
+     role="navigation"
+     data-block="_fake"
+     data-instance-id="fakeid-6ad5ce96480d1"
+          aria-labelledby="instance-fakeid-6ad5ce96480d1-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h3 id="instance-fakeid-6ad5ce96480d1-header" class="h5 card-title d-inline">Quiz navigation</h3>
+
+
+        <div class="card-text content mt-3">
+            <div class="qn_buttons clearfix allquestionsononepage"><a class="qnbutton correct free btn thispage" id="quiznavbutton1" title="Question 1 - Correct" data-quiz-page="0" href="#question-245846-1"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>1<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton2" title="Question 2 - Correct" data-quiz-page="1" href="#question-245846-2"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>2<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton3" title="Question 3 - Correct" data-quiz-page="2" href="#question-245846-3"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>3<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton4" title="Question 4 - Correct" data-quiz-page="3" href="#question-245846-4"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>4<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton5" title="Question 5 - Correct" data-quiz-page="4" href="#question-245846-5"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>5<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton6" title="Question 6 - Correct" data-quiz-page="5" href="#question-245846-6"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>6<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton7" title="Question 7 - Correct" data-quiz-page="6" href="#question-245846-7"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>7<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton8" title="Question 8 - Correct" data-quiz-page="7" href="#question-245846-8"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>8<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton9" title="Question 9 - Correct" data-quiz-page="8" href="#question-245846-9"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>9<span class="accesshide"> This page <span class="flagstate"></span></span></a><a class="qnbutton correct free btn thispage" id="quiznavbutton10" title="Question 10 - Correct" data-quiz-page="9" href="#question-245846-10"><span class="thispageholder"></span><span class="trafficlight"></span><span class="accesshide">Question </span>10<span class="accesshide"> This page <span class="flagstate"></span></span></a></div><div class="othernav"><a href="http://14.99.10.247/moodle/mod/quiz/review.php?attempt=244606&amp;cmid=1372&amp;showall=0">Show one page at a time</a><a class="mod_quiz-next-nav" href="http://14.99.10.247/moodle/mod/quiz/view.php?id=1372">Finish review</a></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-1"></span></aside>
+                </section>
+            </div>
+
+            <div class="columnright ">
+                <section data-region="blocks-column" class="d-print-none" aria-label="Blocks">
+                    <aside id="block-region-side-post" class="block-region" data-blockregion="side-post" data-droptarget="1"><h2 class="sr-only">Blocks</h2></aside>
+                </section>
+            </div>
+        </div>
+    </div>
+    <footer id="page-footer" class="py-3 bg-dark text-light">
+        <div class="container">
+            <div id="course-footer"></div>
+
+            <script>
+//<![CDATA[
+var require = {
+    baseUrl : 'http://14.99.10.247/moodle/lib/requirejs.php/1791390003/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'http://14.99.10.247/moodle/lib/javascript.php/1791390003/lib/jquery/jquery-3.7.1.min',
+        jqueryui: 'http://14.99.10.247/moodle/lib/javascript.php/1791390003/lib/jquery/ui-1.13.2/jquery-ui.min',
+        jqueryprivate: 'http://14.99.10.247/moodle/lib/javascript.php/1791390003/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="http://14.99.10.247/moodle/lib/javascript.php/1791390003/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+M.util.js_pending('filter_mathjaxloader/loader'); require(['filter_mathjaxloader/loader'], function(amd) {amd.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"en"}); M.util.js_complete('filter_mathjaxloader/loader');});;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('en');
+});;
+
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader'], function() {
+    M.util.js_complete('theme_boost/loader');
+});
+;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:1_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:2_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:3_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:4_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:5_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:6_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:7_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:8_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:9_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('qtype_coderunner/userinterfacewrapper'); require(['qtype_coderunner/userinterfacewrapper'], function(amd) {amd.newUiWrapper("ace", "id_q245846:10_answer"); M.util.js_complete('qtype_coderunner/userinterfacewrapper');});;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(25297, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});;
+M.util.js_pending('core/storage_validation'); require(['core/storage_validation'], function(amd) {amd.init(1792396200); M.util.js_complete('core/storage_validation');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.yui.add_module({"core_question_engine":{"name":"core_question_engine","fullpath":"http:\/\/14.99.10.247\/moodle\/lib\/javascript.php\/1791390003\/question\/qengine.js","requires":["node","event"]},"mod_quiz":{"name":"mod_quiz","fullpath":"http:\/\/14.99.10.247\/moodle\/lib\/javascript.php\/1791390003\/mod\/quiz\/module.js","requires":["base","dom","event-delegate","event-key","core_question_engine"]}});
+
+//]]>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?delayStartupUntil=configured"></script>
+<script src="http://14.99.10.247/moodle/lib/javascript.php/1791390003/question/type/coderunner/ace/ace.js"></script>
+<script src="http://14.99.10.247/moodle/lib/javascript.php/1791390003/question/type/coderunner/ace/ext-language_tools.js"></script>
+<script src="http://14.99.10.247/moodle/lib/javascript.php/1791390003/question/type/coderunner/ace/ext-modelist.js"></script>
+<script src="http://14.99.10.247/moodle/lib/javascript.php/1791390003/question/type/coderunner/ace/ext-static_highlight.js"></script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","yes":"Yes","no":"No","cancel":"Cancel","show":"Show","hide":"Hide","confirm":"Confirm","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error","file":"File","url":"URL","collapseall":"Collapse all","expandall":"Expand all"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} links to this file","select":"Select"},"admin":{"confirmdeletecomments":"Are you sure you want to delete the selected comment(s)?","confirmation":"Confirmation"},"question":{"flagged":"Flagged"},"quiz":{"functiondisabledbysecuremode":"That functionality is currently disabled","startattempt":"Start attempt","timesup":"Time is up!"},"debug":{"debuginfo":"Debug info","line":"Line","stacktrace":"Stack trace"},"langconfig":{"labelsep":": "}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() { M.util.js_pending('random6ad5ce96471b61'); Y.use('core_question_flags', function(Y) { M.core_question_flags.init(Y, "http:\/\/14.99.10.247\/moodle\/question\/toggleflag.php", [{"src":"http:\/\/14.99.10.247\/moodle\/theme\/image.php\/classic\/core\/1791390003\/i\/unflagged","title":"Flag this question for future reference","alt":"Flagged","text":"Flag question"},{"src":"http:\/\/14.99.10.247\/moodle\/theme\/image.php\/classic\/core\/1791390003\/i\/flagged","title":"Remove flag","alt":"Flagged","text":"Remove flag"}]);  M.util.js_complete('random6ad5ce96471b61'); });
+ M.util.js_pending('random6ad5ce96471b62'); Y.use('mod_quiz', function(Y) { M.mod_quiz.nav.init(Y);  M.util.js_complete('random6ad5ce96471b62'); });
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random6ad5ce96471b64'); Y.use('mod_quiz', function(Y) { M.mod_quiz.init_review_form(Y);  M.util.js_complete('random6ad5ce96471b64'); });
+ M.util.js_pending('random6ad5ce96471b65'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random6ad5ce96471b65'); });
+})();
+//]]>
+</script>
+
+        </div>
+    </footer>
+</div>
+
+
+</body></html>
